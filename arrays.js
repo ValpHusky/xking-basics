@@ -26,4 +26,16 @@ for (var b = 0; b < branches.length; b++) {
     }
 }
 
+//Deconstruction to assign value to variable
+// const apples = myarray[0]
+// const pears = myarray[1]
+// const melons = myarray[2]
+
+const [ apples, pears, melons ] = myarray
+console.log('deconstructed', apples, pears, melons)
+
+
+//Deconstruction to merge
+const store1Deconstructed = [...fruits,...sodas,...chips] 
+console.log('store1Deconstructed', store1Deconstructed)
 
