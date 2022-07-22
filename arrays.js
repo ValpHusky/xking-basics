@@ -39,3 +39,71 @@ console.log('deconstructed', apples, pears, melons)
 const store1Deconstructed = [...fruits,...sodas,...chips] 
 console.log('store1Deconstructed', store1Deconstructed)
 
+
+
+
+// Map method
+// 1st cycle => mymapCallback("dog", 0, ["dog","cat","lizard"])
+// 2nd cycle => mymapCallback("cat", 1, ["dog","cat","lizard"])
+// 3rd cycle => mymapCallback("lizard", 2, ["dog","cat","lizard"])
+const simpleArray = ["dog","cat","lizard"]
+function mymapCallback(element, index, originalArray) {
+    console.log('MAP',element, index, originalArray)
+
+    switch(element) {
+        case "dog":
+            return "puppy"
+            break
+        case "cat":
+            return "kitty"
+            break
+        case "lizard":
+            return "lizzy"
+            break;
+        default:
+            return "?"
+    }
+}
+const newarray = simpleArray.map(mymapCallback)
+
+console.log("newarray", newarray)
+
+const thequestionmarkarray = newarray.map(mymapCallback)
+
+console.log("thequestionmarkarray", thequestionmarkarray)
+
+
+// ANOTHER MAP EXAMPLE
+const numbers = [1,1,2,3,5,8,11,23]
+const divided = numbers.map((n, i) => n === 1 ? n : n/2)
+console.log('divided', divided)
+
+
+const myobj = {
+    random: function(callback) {
+        callback(Math.random())
+    }
+}
+
+//Random is a method because it belongs to an object. But its data type is a function
+myobj.random((r) => console.log("random number is", r))
+// Plain function
+const randomFunction = () => Math.random()
+
+
+//Array Filter
+const arrayToFilter = ["apple","pear","peach","banana"]
+const myfilteredArray = arrayToFilter.filter((element, index, originalArray) => {
+    const thefirstcharacter = element.charAt(0)
+    return thefirstcharacter === "p"
+})
+
+console.log("Original Array To Filter", arrayToFilter)
+console.log("Filtered Array", myfilteredArray)
+
+const mystring = "apple"
+const mystringAsComputerReadsIt = ["a","p","p","l","e"]
+
+
+
+
