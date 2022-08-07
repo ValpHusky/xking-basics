@@ -32,7 +32,7 @@ async function remove11(array) {
     return array.filter((element) => element === 11 ? false : true)
 }
 
-//Chaining with async/await
+//Chaining with async/await using await give you the values from the promise that is created by aysnc functions 
 async function main() {
     const filteredarray = await mypromise
     const no2array = await filterOutAll2(filteredarray)
