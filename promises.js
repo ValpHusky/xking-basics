@@ -67,5 +67,31 @@ function Simplefunction() {
     await mypromise
 }
 
+// Design Pattern: Chain of responsability
+const thefinalarraypromise = mypromise.then((filteredarray) => {
+    return filteredarray.filter((element) => element === 2 ? false : true)
+}).then((nonumbers2) => {
+    return [...nonumbers2, 11]
+}).then((nonumbers2plus11) => {
+    return nonumbers2plus11.length >= 1 ? nonumbers2plus11 : [11]
+})
+
+const promiseWithoutNumberTwo = mypromise.then((filteredarray) => {
+    return filteredarray.filter((element) => element === 2 ? false : true)
+})
+
+const arraywith11promise = promiseWithoutNumberTwo.then((nonumbers2) => {
+    return [...nonumbers2, 11]
+})
+
+const thefinalarray2promise = arraywith11.then((nonumbers2plus11) => {
+    return nonumbers2plus11.length >= 1 ? nonumbers2plus11 : [11]
+})
+
+const remove11process = arraywith11promise.then((arraywith11) => {
+    return arraywith11.filter((element) => element === 11 ? false : true)
+})
+
+
 
 console.log('filtered array is', filteredarray)

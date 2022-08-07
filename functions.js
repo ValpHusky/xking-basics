@@ -71,3 +71,9 @@ console.log("some other ratios", pureAspectRatioOfScreen(1280,600), pureAspectRa
 // TODO:
 // 1. Promises and async/await
 
+//Values and equality
+// x = 2 + 1
+const randomNumber = Math.random()
+
+// randomNumber + 1
+// Math.random() + 1
