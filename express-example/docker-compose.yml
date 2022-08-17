@@ -1,0 +1,16 @@
+version: "2.4"
+networks:
+  app-tier:
+    driver: bridge
+services:
+    express:
+        container_name: myexpress-server
+        build: ./
+        command: node index.js
+        volumes:
+            - ./index.js:/myexpress-server/index.js
+        ports:
+            - 4001:4001
+        networks:
+            - app-tier
+    
